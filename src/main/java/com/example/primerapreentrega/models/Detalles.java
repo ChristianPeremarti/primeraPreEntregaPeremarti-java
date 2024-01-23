@@ -3,29 +3,30 @@ package com.example.primerapreentrega.models;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-
-@Entity
-public class Cliente {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Getter
-    @Setter
-    private Long id;
+public class Detalles {
 
     @Column
     @Getter
     @Setter
-    private String name;
+    private Integer invoice_id;
 
     @Column
     @Getter
     @Setter
-    private String lastname;
+    private Integer invoice_detail_id;
 
     @Column
     @Getter
     @Setter
-    private Integer docnumber;
+    private Integer amount;
 
+    @Column
+    @Getter
+    @Setter
+    private Integer product_id;
+
+    @Column
+    @Getter
+    @Setter
+    private Double price;
 }

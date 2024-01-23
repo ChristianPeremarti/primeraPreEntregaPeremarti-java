@@ -1,6 +1,7 @@
 package com.example.primerapreentrega.controllers;
 
 import com.example.primerapreentrega.models.Cliente;
+import com.example.primerapreentrega.models.Detalles;
 import com.example.primerapreentrega.repository.Repository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -21,6 +22,7 @@ public class Controller {
         return repo.findAll();
     }
 
+
     @PostMapping("alta")
     public String post(@RequestBody Cliente cliente){
         repo.save(cliente);
@@ -30,8 +32,9 @@ public class Controller {
     @PutMapping("modificar/{id}")
     public String update(@PathVariable Long id, @RequestBody Cliente cliente) {
         Cliente updateCliente = repo.findById(id).get();
-        updateCliente.setNombre(cliente.getNombre());
-        updateCliente.setEmail(cliente.getEmail());
+        updateCliente.setName(cliente.getName());
+        updateCliente.setLastname(cliente.getLastname());
+        updateCliente.setDocnumber(cliente.getDocnumber());
         repo.save(updateCliente);
         return "modificado";
     }
