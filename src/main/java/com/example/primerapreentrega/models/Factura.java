@@ -14,6 +14,11 @@ public class Factura {
     @Column
     @Getter
     @Setter
+    private Long client_id;
+
+    @Column
+    @Getter
+    @Setter
     private Long created_at;
 
     @Column

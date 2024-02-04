@@ -5,15 +5,16 @@ import lombok.Getter;
 import lombok.Setter;
 public class Detalles {
 
-    @Column
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Getter
     @Setter
-    private Integer invoice_id;
+    private Integer id;
 
     @Column
     @Getter
     @Setter
-    private Integer invoice_detail_id;
+    private Integer invoice_id;
 
     @Column
     @Getter
